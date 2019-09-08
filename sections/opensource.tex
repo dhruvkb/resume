@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iconsection{opensource}{Open source projects}{\faLockOpen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\projectsubsection{creativecommons}% Keyword
+{\href{https://creativecommons.github.io/cc-vocabulary/}{Vocabulary}}% Title
+{Design system}% What?
+{May 2019 -- Present}% Time period
+{Vue, Styleguidist, Storybook}% Tech stack
+
+\sectiondescription{
+  Vocabulary is a cohesive design system to unite the web facing Creative 
+  Commons~\faCreativeCommons.
+  \begin{itemize}[nosep, leftmargin=*]
+    \item Developed close to 40 components for the project.
+    \item Wrote the documentation and styleguide for the library.
+    \item Developed an interactive playground for the components.
+    \item Deployed all these products to GitHub Pages.
+    \item Identified easy issues to encourage beginner contributors.
+  \end{itemize}
+}
+
+
+\projectsubsection{omniportback}% Keyword
+{\href{https://github.com/IMGIITRoorkee/omniport-backend/}{Omniport backend}}% Title
+{Campus portal platform}% What?
+{March 2018 -- Present}% Time period
+{Django; React}% Tech stack
+
+\sectiondescription{
+  Omniport is a platform for institutes to deploy their web portal (like 
+  Channel~i by IMG for IIT-R), by and for the students.
+  \begin{itemize}[nosep, leftmargin=*]
+    \item Planned it to be unopinionated to suit any institute's needs.
+    \item Developed Omniport to be generic but customisable.
+    \item Developed extension capability with plug-and-play apps.
+    \item Developed latest features such HTTP/2 and WebSockets.
+    \item Added OAuth2 provider functionality for 3rd-party auth.
+    \item Launched as a mobile responsive progressive web app.
+    \item Composed the Django backend, all core apps and services.
+    \item Integrated with the React frontend and deployed on Docker.
+  \end{itemize}
+}
+
+\ifdocoriented
+\projectsubsection{omniportdocs}% Keyword
+{\href{https://omniport.readthedocs.io/}{Omniport documentation}}% Title
+{Holistic documentation}% What?
+{March 2018 -- Present}% Time period
+{Sphinx; reStructuredText}% Tech stack
+
+\sectiondescription{
+  Omniport is a platform for institutes to deploy their web portal (like 
+  Channel~i by IMG for IIT-R), by and for the students.
+  \begin{itemize}[nosep, leftmargin=*]
+    \item Penned the philosophy and ideals of the project.
+    \item Documented the architecture, frontend and backend.
+    \item Wrote helpful tutorials, how-to guides and FAQ. 
+    \item Wrote in-depth reference material for functions and utils.
+    \item Deployed an always up-to-date version on ReadTheDocs.
+    \item Open-sourced and licensed docs under the GNU FDL.
+    \item Documented the entire codebase using PyDoc and JSDoc.
+  \end{itemize}
+}
+\else
+\projectsubsection{omniportinfra}% Keyword
+{\href{https://github.com/IMGIITRoorkee/omniport-docker/}{Omniport infrastructure}}% Title
+{Container deployment}% What?
+{March 2018 -- Present}% Time period
+{Docker (+Compose); Bash}% Tech stack
+
+\sectiondescription{
+  Omniport is a platform for institutes to deploy their web portal (like 
+  Channel~i by IMG for IIT-R), by and for the students.
+  \begin{itemize}[nosep, leftmargin=*]
+    \item Replaced old monolithic architecture with microservices.
+    \item Containerised core and scaffolding services with Docker.
+    \item Planned the infrastructure to be elastic and cloud native.
+    \item Automated scaling, redundancy and reproducibility.
+    \item Bash scripted image and container creation and tear-down.
+    \item Deployed proofs-of-concept in dev and prod environments.
+  \end{itemize}
+}
+\fi
