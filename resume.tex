@@ -1,49 +1,46 @@
+% Use XeLaTeX!
+% This document uses custom fonts which XeLaTeX supports.
+
 \documentclass[10pt, a4paper]{resume}
 
-\usepackage[margin=0.75cm]{geometry}
+\usepackage[margin=0.5cm]{geometry}
 \usepackage[none]{hyphenat}
-\usepackage[utf8]{inputenc}
-\usepackage[default]{lato}
 
 \usepackage{enumitem}
-\usepackage{fontawesome5}
+\usepackage{fontspec}
 \usepackage{hyperref}
 \usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{xcolor}
 
 \hypersetup{%
-  colorlinks=false,% Remove font color
+  colorlinks=false,% Remove font colour
   linkbordercolor=black,% Make underlines black
   pdfborderstyle={/S/U/W 1}% Style is underline of width 1pt
 }
-
-% This prevents warnings that arise because Lato doesn't have a Math variant
-% to support the bullet character. LaTeX replaces Lato with a Math-font and 
-% warns you, unless you make that fall-back explicit like so.
-\renewcommand\textbullet{\ensuremath{\bullet}}
 
 % Change job portfolio type
 % Set docoriented to true to print a writing-oriented resume
 \newif\ifdocoriented
 \docorientedtrue
 
-% Change number of columns
-% Set twocolumns to false to print resume in a single column
-\newif\iftwocolumns
-\twocolumnstrue
+\ifdocoriented
+  \colorlet{background}{base3}
+  \colorlet{primary}{base00}
+  \colorlet{secondary}{base1}
+\else
+  \colorlet{background}{base03}
+  \colorlet{primary}{base0}
+  \colorlet{secondary}{base01}
+\fi
+
+\pagecolor{background}
+\color{primary}
 
 \begin{document}
-
-\iftwocolumns
 \begin{multicols}{2}[]
   \input{columns/left.tex}
   \columnbreak
-  \input{columns/right.tex}
+  \input{columns/right.tex}  
 \end{multicols}
-\else
-  \input{columns/left.tex}
-  \input{columns/right.tex}
-\fi
-
 \end{document}
