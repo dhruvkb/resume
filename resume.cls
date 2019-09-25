@@ -160,12 +160,12 @@
 }
 
 \newcommand{\onsiteexperiencesubsection}[5]{%
-\datedsubsection{#1}{#2}{#3}{#4}{#5}
+\datedsubsection{#1}{#2}{#3}{#4}{\fasMapMarker~#5}
 }
 
 
 \newcommand{\worksubsection}[5]{% Projects
-\datedsubsection{#1}{#2}{#3}{#4}{#5}%
+\datedsubsection{#1}{#2}{#3}{#4}{\fasServer~#5}%
 }
 
 % Extends content
