@@ -16,3 +16,18 @@ moon.
 These here are my résumés and the
 <img src="readme_assets/latex.png" height="16">
 files that I use to generate them.
+
+### Note
+
+A basic LaTeX installation probably won't contain the following 
+packages. Use `tlmgr` to install them manually.
+
+- titlesec
+- hyphenat
+- enumitem
+
+The command to build the PDF of the résumé is as follows.
+
+```bash
+$ xelatex resume.tex
+```
