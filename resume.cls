@@ -144,7 +144,7 @@
 % 1 Label
 % 2 Text
 \newcommand{\sgsubsection}[2]{% Topics in Space Grotesk
-\subsection[#1]{{\spacegrotesk#2}}%
+\subsection[#1]{\textcolor{yellow}{\spacegrotesk#2}}%
 }
 
 %
@@ -154,7 +154,7 @@
 % 4 Attribute 1
 % 5 Attribute 2
 \newcommand{\datedsubsection}[5]{% Topics with calendar
-\subsection[#1]{{\spacegrotesk#2} \hfill \textcolor{secondary}{\fasCalendar~#4}}%
+\subsection[#1]{\textcolor{yellow}{\spacegrotesk#2} \hfill \textcolor{secondary}{\fasCalendar~#4}}%
 {\textcolor{secondary}{{\spacegrotesk#3} \hfill #5}}%
 \vspace{2mm}%
 }
