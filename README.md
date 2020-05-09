@@ -22,12 +22,15 @@ files that I use to generate them.
 A basic LaTeX installation probably won't contain the following 
 packages. Use `tlmgr` to install them manually.
 
-- titlesec
-- hyphenat
-- enumitem
+- `titlesec`
+- `hyphenat`
+- `enumitem`
 
 The command to build the PDF of the résumé is as follows.
 
 ```bash
 $ xelatex resume.tex
 ```
+
+You can also use `latexmk` to setup a watch and build process. But you will 
+probably need to install it using `tlmgr` too.
