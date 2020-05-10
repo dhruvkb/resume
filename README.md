@@ -10,8 +10,8 @@
 
 Hello! I am [Dhruv Bhanushali](https://dhruvkb.github.io/), an engineering
 graduate from the Indian Institute of Technology, Roorkee. I am a software
-developer and technical writer, based on the time of day and the phase of the
-moon. 
+developer and technical writer among many other things, based on the time of day
+and the phase of the moon.
 
 These here are my résumés and the
 <img src="readme_assets/latex.png" height="16">
@@ -34,3 +34,8 @@ $ xelatex resume.tex
 
 You can also use `latexmk` to setup a watch and build process. But you will 
 probably need to install it using `tlmgr` too.
+
+### Related repos
+
+- [Portfolio](https://github.com/dhruvkb/portfolio/)
+- [Serverless APIs](https://github.com/dhruvkb/portfolio-api/)
