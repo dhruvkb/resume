@@ -7,27 +7,22 @@
 \ProvidesClass{resume}[Resume]
 \LoadClassWithOptions{extarticle}
 
-\RequirePackage{titlesec}
 \RequirePackage{fontspec}
+\RequirePackage{tabularx}
+\RequirePackage{titlesec}
 \RequirePackage{xcolor}
 
-%%%%%%%%%%%%%%%%%
-% Format titles %
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%
+% Lengths %
+%%%%%%%%%%%
 
-\titleformat{\section}
-    {\large}{}{0em}{}
-    [\titlerule]
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
 
-\titleformat{\subsection}
-    {}{}{0em}{}
-    [\vspace{-0.25cm}]
-
-%%%%%%%%%%%%%%
-% Formatting %
-%%%%%%%%%%%%%%
-
-% Colors
+%%%%%%%%%%
+% Colors %
+%%%%%%%%%%
+% Colors from https://ethanschoonover.com/solarized/
 
 % Background tones
 \definecolor{base03}{RGB}{0, 43, 54}
@@ -53,122 +48,197 @@
 \definecolor{cyan}{RGB}{42, 161, 152}
 \definecolor{green}{RGB}{133, 153, 0}
 
-% Lengths
+%%%%%%%%%
+% Fonts %
+%%%%%%%%%
 
-\setlength{\parindent}{0cm}
-\setlength{\textfloatsep}{0cm}
-
-% Fonts
-
-\newfontfamily{\spacegrotesk}{SpaceGrotesk}[
+% Heading font
+\newfontfamily{\ibmplexsans}{IBMPlexSans}[
   Path = fonts/,
   Extension = .otf,
   UprightFont = *-Bold
 ]
-\newfontfamily{\fafree}{FontAwesomeFree}[
-  Path = fonts/,
-  Extension = .otf,
-  UprightFont = *-Solid
-]
-\newfontfamily{\fabrands}{FontAwesomeBrands}[
-  Path = fonts/,
-  Extension = .otf,
-  UprightFont = *-Regular
-]
 
-\setmainfont{IBMPlexSans}[
+% Body font
+\setmainfont{SFProText}[
   Path = fonts/,
   Extension = .otf,
   UprightFont = *-Regular,
-  ItalicFont = *-Italic
+  ItalicFont = *-RegularItalic,
+  BoldFont = *-Semibold
 ]
 
-%%%%%%%%%%%%%%%%
-% New commands %
-%%%%%%%%%%%%%%%%
+% Icon fonts
+\newfontfamily{\fabrands}{FontAwesome}[
+  Path = fonts/,
+  Extension = .otf,
+  UprightFont = *-Brands
+]
+\newfontfamily{\iconmonstr}{iconmonstr}[
+  Path = fonts/,
+  Extension = .ttf,
+  UprightFont = *-Iconic-Font
+]
 
-% Icons
-% Glyphs copied from https://fontawesome.com/cheatsheet
-\newcommand{\fasEnvelope}{{\fafree}}
-\newcommand{\fasPhone}{{\fafree}}
+%%%%%%%%%
+% Icons %
+%%%%%%%%%
+% Glyphs from https://iconmonstr.com
+%    and also https://fontawesome.com
 
-\newcommand{\fabGitHub}{{\fabrands}}
-\newcommand{\fabLinkedIn}{{\fabrands}}
-\newcommand{\fabCreativeCommons}{{\fabrands}}
+\newcommand{\iconEmail}{{\iconmonstr^^^^e05f}}
+\newcommand{\iconPhone}{{\iconmonstr^^^^e06d}}
+\newcommand{\iconRocket}{{\iconmonstr^^^^e078}}
+\newcommand{\iconGraduationHat}{{\iconmonstr^^^^e0cc}}
+\newcommand{\iconCalendar}{{\iconmonstr^^^^e01f}}
+\newcommand{\iconNetwork}{{\iconmonstr^^^^e0e8}}
+\newcommand{\iconHome}{{\iconmonstr^^^^e05e}}
+\newcommand{\iconLocation}{{\iconmonstr^^^^e068}}
+\newcommand{\iconInstitute}{{\iconmonstr^^^^e0ec}}
+\newcommand{\iconSkills}{{\iconmonstr^^^^e116}}
+\newcommand{\iconBriefcase}{{\iconmonstr^^^^e01e}}
+\newcommand{\iconLockOpen}{{\iconmonstr^^^^e062}}
+\newcommand{\iconServer}{{\iconmonstr^^^^e0fa}}
+\newcommand{\iconCubes}{{\iconmonstr^^^^e0f4}}
+\newcommand{\iconLightbulb}{{\iconmonstr^^^^e116}}
+\newcommand{\iconOpenSource}{{\iconmonstr^^^^e07d}}
 
-\newcommand{\fasRocket}{{\fafree}}
-\newcommand{\fasMedal}{{\fafree}}
-\newcommand{\fasUniversity}{{\fafree}}
-\newcommand{\fasBriefcase}{{\fafree}}
-\newcommand{\fasUserTie}{{\fafree}}
-\newcommand{\fasLightbulb}{\fafree}
-\newcommand{\fasLockOpen}{{\fafree}}
-\newcommand{\fasCubes}{{\fafree}}
-\newcommand{\fasPenNib}{{\fafree}}
+\newcommand{\iconGitHub}{{\fabrands^^^^f09b}}
+\newcommand{\iconLinkedIn}{{\fabrands^^^^f08c}}
+\newcommand{\iconGoogle}{{\fabrands^^^^f1a0}}
+\newcommand{\iconCreativeCommons}{{\fabrands^^^^f25e}}
 
-\newcommand{\fasCalendar}{{\fafree}}
-\newcommand{\fasGraduationCap}{{\fafree}}
-\newcommand{\fasMapMarker}{{\fafree}}
-\newcommand{\fasServer}{{\fafree}}
+%%%%%%%%%%
+% Titles %
+%%%%%%%%%%
+
+% Customize titles
+
+\titleformat
+ {\section}% Command
+   {\Large}% Format
+   {}% Label
+   {0cm}% Separation
+   {}% Before code
+   [\titlerule]% After code
+
+\titleformat
+{\subsection}% Command
+  [runin]% Shape
+  {}% Format
+  {}% Label
+  {0cm}% Separation
+  {}% Before code
+
+% Colored variants
+
+% Colored section
+% 1 Label
+% 2 Text
+% 3 Icon
+% 4 Color
+\newcommand{\colouredsection}[4]{%
+\section[#1]{\ibmplexsans\textcolor{#4}{#2\hfill#3}}%
+}
+
+% Colored subsection
+% 1 Label
+% 2 Text
+% 3 Color
+\newcommand{\colouredsubsection}[3]{%
+\subsection[#1]{\textcolor{#3}{\ibmplexsans#2}}%
+}
+
+% Resume heirarchy 
+
+% Section in the resume
+% 1 Label
+% 2 Text
+% 3 Icon
+\newcommand{\resumesection}[3]{%
+\colouredsection{#1}{#2}{#3}{green}%
+}
+
+% Single line subsection in the resume
+% 1 Label
+% 2 Text
+\newcommand{\resumeonesubsection}[2]{%
+\colouredsubsection{#1}{#2}{yellow}%
+}
+
+% Double line subsection in the resume
+% 1 Label
+% 2 Text
+% 3 Subtext
+% 4 Attribute#1
+% 5 Attribute#2
+% 6 Icon#1
+% 7 Icon#2
+\newcommand{\resumetwosubsection}[7]{%
+\resumeonesubsection{#1}{#2} \hfill {\textcolor{secondary}{#4}~\textcolor{secondary}{#6}}\\%
+{#3}                         \hfill {\textcolor{secondary}{#5}~\textcolor{secondary}{#7}}%
+\vspace{2mm}%
+}
+
+% Tailored sections
+
+% Timed
+% 1 Label
+% 2 Text
+% 3 Subtext
+% 4 Time period
+% 5 Attribute#2
+% 6 Icon#2
+\newcommand{\timedsubsection}[6]{%
+\resumetwosubsection{#1}{#2}{#3}{#4}{#5}{\iconCalendar}{#6}%
+}
+
+% Work
+% 1 Label
+% 2 Title
+% 3 Category
+% 4 Time period
+% 5 Tech stack
+\newcommand{\worksubsection}[5]{%
+\timedsubsection{#1}{#2}{\textbf{#3}}{#4}{#5}{\iconServer}%
+}
+
+% Experience
+% 1 Label
+% 2 Role
+% 3 Organisation
+% 4 Time period
+% 5 Attribute#2
+% 6 Icon#2
+\newcommand{\experiencesubsection}[6]{%
+\timedsubsection{#1}{#2}{@~\textbf{#3}}{#4}{#5}{#6}%
+}
+
+% On-site experience
+% 1 Label
+% 2 Role
+% 3 Organisation
+% 4 Time period
+% 5 Location
+\newcommand{\onsiteexperiencesubsection}[5]{%
+\experiencesubsection{#1}{#2}{#3}{#4}{#5}{\iconLocation}%
+}
 
 % About
 
 \newcommand{\name}[1]{% Person's name
-\noindent{\LARGE\spacegrotesk\textcolor{red}{#1}}
+\noindent{\Huge\ibmplexsans\textcolor{red}{#1}}%
 \vspace{0.4cm}%
 }
 
 \newcommand{\intro}[4]{% Person's introduction
-\vspace{2mm}
-\begin{tabularx}{\linewidth}{@{}Xl@{}}
-  {#1} & {#3} \\
-  {#2} & {#4}
-\end{tabularx}
-\vspace{-4mm}
+\begin{tabularx}{\linewidth}{@{}Xl@{}}%
+  {#1} & {#3} \\%
+  {#2} & {#4}%
+\end{tabularx}%
 }
 
-% Extends section
-
-%
-% 1 Label
-% 2 Text
-% 3 Colour
-% 4 Icon
-\newcommand{\colouredsection}[4]{% Coloured headings with icons
-\section[#1]{\spacegrotesk\textcolor{#3}{#2\hfill#4}}%
-}
-
-% Extends subsection
-
-%
-% 1 Label
-% 2 Text
-\newcommand{\sgsubsection}[2]{% Topics in Space Grotesk
-\subsection[#1]{\textcolor{yellow}{\spacegrotesk#2}}%
-}
-
-%
-% 1 Label
-% 2 Text
-% 3 Subtext
-% 4 Attribute 1
-% 5 Attribute 2
-\newcommand{\datedsubsection}[5]{% Topics with calendar
-\subsection[#1]{\textcolor{yellow}{\spacegrotesk#2} \hfill \textcolor{secondary}{\fasCalendar~#4}}%
-{\textcolor{secondary}{{\spacegrotesk#3} \hfill #5}}%
-\vspace{2mm}%
-}
-
-\newcommand{\onsiteexperiencesubsection}[5]{%
-\datedsubsection{#1}{#2}{#3}{#4}{\fasMapMarker~#5}
-}
-
-
-\newcommand{\worksubsection}[5]{% Projects
-\datedsubsection{#1}{#2}{#3}{#4}{\fasServer~#5}%
-}
-
-% Extends content
+% Content
 
 \newcommand{\sectiondescription}[1]{% Content for topics
 \raggedright#1%

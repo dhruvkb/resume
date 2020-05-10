@@ -1,16 +1,14 @@
 % Use XeLaTeX!
 % This document uses custom fonts which XeLaTeX supports.
 
-\documentclass[10pt, a4paper]{resume}
+\documentclass[9pt, a4paper]{resume}
 
-\usepackage[margin=0.5cm]{geometry}
+\usepackage[margin=0.75cm, tmargin=1.00cm]{geometry}
 \usepackage[none]{hyphenat}
 
 \usepackage{enumitem}
-\usepackage{fontspec}
 \usepackage{hyperref}
 \usepackage{multicol}
-\usepackage{tabularx}
 \usepackage{xcolor}
 
 \hypersetup{%
@@ -23,6 +21,11 @@
 % Set docoriented to true to print a writing-oriented resume
 \newif\ifdocoriented
 \docorientedfalse
+
+% Change whether a cover-letter is to be included with the resume
+% Set coverletter to true to print a cover-letter before the resume
+\newif\ifcoverletter
+\coverlettertrue
 
 \ifdocoriented
   \colorlet{background}{base3}
@@ -38,6 +41,7 @@
 \color{primary}
 
 \begin{document}
+
 \begin{multicols}{2}[]
   \input{columns/left.tex}
   \columnbreak
