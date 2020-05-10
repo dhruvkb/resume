@@ -32,15 +32,23 @@
   \colorlet{primary}{base00}
   \colorlet{secondary}{base1}
 \else
-  \colorlet{background}{base03}
-  \colorlet{primary}{base0}
-  \colorlet{secondary}{base01}
+  \colorlet{background}{base3}
+  \colorlet{primary}{base00}
+  \colorlet{secondary}{base1}
+
+  %\colorlet{background}{base03}
+  %\colorlet{primary}{base0}
+  %\colorlet{secondary}{base01}
 \fi
 
 \pagecolor{background}
 \color{primary}
 
 \begin{document}
+
+\ifcoverletter
+  \input{coverletter.tex}
+\fi
 
 \begin{multicols}{2}[]
   \input{columns/left.tex}
