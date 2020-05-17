@@ -1,54 +1,6 @@
-% Use XeLaTeX!
-% This document uses custom fonts which XeLaTeX supports.
-
-\documentclass[9pt, a4paper]{resume}
-
-\usepackage[margin=0.75cm, tmargin=1.00cm]{geometry}
-\usepackage[none]{hyphenat}
-
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{multicol}
-\usepackage{xcolor}
-
-\hypersetup{%
-  colorlinks=false,% Remove font colour
-  linkbordercolor=black,% Make underlines black
-  pdfborderstyle={/S/U/W 1}% Style is underline of width 1pt
-}
-
-% Change job portfolio type
-% Set docoriented to true to print a writing-oriented resume
-\newif\ifdocoriented
-\docorientedfalse
-
-% Change whether a cover-letter is to be included with the resume
-% Set coverletter to true to print a cover-letter before the resume
-\newif\ifcoverletter
-\coverletterfalse
-
-\ifdocoriented
-  \colorlet{background}{base3}
-  \colorlet{primary}{base00}
-  \colorlet{secondary}{base1}
-\else
-  \colorlet{background}{base03}
-  \colorlet{primary}{base0}
-  \colorlet{secondary}{base01}
-\fi
-
-\pagecolor{background}
-\color{primary}
-
-\begin{document}
-
-\ifcoverletter
-  \input{coverletter.tex}
-\fi
-
+% For another similar setup, see cover.tex
 \begin{multicols}{2}[]
   \input{columns/left.tex}
   \columnbreak
   \input{columns/right.tex}  
 \end{multicols}
-\end{document}

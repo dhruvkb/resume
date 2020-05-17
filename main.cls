@@ -4,7 +4,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{resume}[Resume]
+\ProvidesClass{main}[Main]
 \LoadClassWithOptions{extarticle}
 
 \RequirePackage{fontspec}
@@ -100,6 +100,7 @@
 \newcommand{\iconLockOpen}{{\iconmonstr^^^^e062}}
 \newcommand{\iconServer}{{\iconmonstr^^^^e0fa}}
 \newcommand{\iconCubes}{{\iconmonstr^^^^e0f4}}
+\newcommand{\iconNotes}{{\iconmonstr^^^^e0a3}}
 \newcommand{\iconLightbulb}{{\iconmonstr^^^^e116}}
 \newcommand{\iconOpenSource}{{\iconmonstr^^^^e07d}}
 
