@@ -25,20 +25,16 @@
 % Change whether a cover-letter is to be included with the resume
 % Set coverletter to true to print a cover-letter before the resume
 \newif\ifcoverletter
-\coverlettertrue
+\coverletterfalse
 
 \ifdocoriented
   \colorlet{background}{base3}
   \colorlet{primary}{base00}
   \colorlet{secondary}{base1}
 \else
-  \colorlet{background}{base3}
-  \colorlet{primary}{base00}
-  \colorlet{secondary}{base1}
-
-  %\colorlet{background}{base03}
-  %\colorlet{primary}{base0}
-  %\colorlet{secondary}{base01}
+  \colorlet{background}{base03}
+  \colorlet{primary}{base0}
+  \colorlet{secondary}{base01}
 \fi
 
 \pagecolor{background}
