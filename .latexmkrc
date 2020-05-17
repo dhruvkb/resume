@@ -1,1 +1,1 @@
-$pdflatex=q/xelatex -synctex=1 %O %S/
+$pdflatex='xelatex -synctex=1 %O %S'
