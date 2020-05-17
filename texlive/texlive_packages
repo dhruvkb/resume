@@ -1,0 +1,14 @@
+latexmk
+xetex
+
+enumitem
+extsizes
+fontspec
+geometry
+hyperref
+hyphenat
+multicol
+tabularx
+titlesec
+xstring
+xcolor
