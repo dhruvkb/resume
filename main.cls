@@ -53,10 +53,11 @@
 %%%%%%%%%
 
 % Heading font
-\newfontfamily{\ibmplexsans}{IBMPlexSans}[
+\newfontfamily{\jetbrainsmono} {JetBrainsMono}[
   Path = fonts/,
-  Extension = .otf,
-  UprightFont = *-Bold
+  Extension = .ttf,
+  UprightFont = *-Medium,
+  BoldFont = *-Bold
 ]
 
 % Body font
@@ -139,7 +140,7 @@
 % 3 Icon
 % 4 Color
 \newcommand{\colouredsection}[4]{%
-\section[#1]{\ibmplexsans\textcolor{#4}{#2\hfill#3}}%
+\section[#1]{\jetbrainsmono\textcolor{#4}{#2\hfill#3}}%
 }
 
 % Colored subsection
@@ -147,7 +148,7 @@
 % 2 Text
 % 3 Color
 \newcommand{\colouredsubsection}[3]{%
-\subsection[#1]{\textcolor{#3}{\ibmplexsans#2}}%
+\subsection[#1]{\textcolor{#3}{\jetbrainsmono#2}}%
 }
 
 % Resume heirarchy 
@@ -225,10 +226,15 @@
 \experiencesubsection{#1}{#2}{#3}{#4}{#5}{\iconLocation}%
 }
 
+% LaTeX
+\newcommand{\prettylatex}[0]{% Pretty-print LaTeX
+  {\fontfamily{lmr}\selectfont\LaTeX}%
+}
+
 % About
 
 \newcommand{\name}[1]{% Person's name
-\noindent{\Huge\ibmplexsans\textcolor{red}{#1}}%
+\noindent{\Huge\jetbrainsmono\textcolor{red}{\textbf{#1}}}%
 \vspace{0.4cm}%
 }
 
