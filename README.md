@@ -50,3 +50,4 @@ The job name is the name of the output PDF.
 
 - [Portfolio](https://github.com/dhruvkb/portfolio/)
 - [Serverless APIs](https://github.com/dhruvkb/portfolio-api/)
+- [Blog posts](https://github.com/dhruvkb/portfolio-blog/)
