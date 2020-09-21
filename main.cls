@@ -13,6 +13,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{xcolor}
 
+\usetikzlibrary{backgrounds}
 \usetikzlibrary{fadings}
 \tikzset{fading text/.style = {}}
 
@@ -250,6 +251,9 @@
     \node[text = transparent!0, inner xsep = 0pt, outer xsep = 0pt]{#3};%
   \end{tikzfadingfrompicture}%
   \begin{tikzpicture}[baseline = (textnode.base)]%
+    \begin{scope}[on background layer]%
+      \node[inner sep = 0pt, outer sep = 0pt, text = red](textnode){#3};%
+    \end{scope}%
     \node[inner sep = 0pt, outer sep = 0pt](textnode){\href{#2}{\XeTeXLinkBox{\phantom{#3}}}};%
     \shade[path fading = fading letter, fading text, #1, fit fading = false]%
     (textnode.south west) rectangle (textnode.north east);%
