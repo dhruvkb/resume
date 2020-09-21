@@ -16,8 +16,8 @@
 % Lengths %
 %%%%%%%%%%%
 
-\setlength{\parskip}{0cm}
-\setlength{\parindent}{0cm}
+\setlength{\parskip}   {0cm}
+\setlength{\parindent} {0cm}
 
 %%%%%%%%%%
 % Colors %
@@ -25,59 +25,59 @@
 % Colors from https://ethanschoonover.com/solarized/
 
 % Background tones
-\definecolor{base03}{RGB}{0, 43, 54}
-\definecolor{base02}{RGB}{7, 54, 66}
+\definecolor{base03}  {RGB}{  0,  43,  54}
+\definecolor{base02}  {RGB}{  7,  54,  66}
 
-\definecolor{base2}{RGB}{238, 232, 213}
-\definecolor{base3}{RGB}{253, 246, 227}
+\definecolor{base2}   {RGB}{238, 232, 213}
+\definecolor{base3}   {RGB}{253, 246, 227}
 
 % Content tones
-\definecolor{base01}{RGB}{88, 110, 117}
-\definecolor{base00}{RGB}{101, 123, 131}
+\definecolor{base01}  {RGB}{ 88, 110, 117}
+\definecolor{base00}  {RGB}{101, 123, 131}
 
-\definecolor{base0}{RGB}{131, 148, 150}
-\definecolor{base1}{RGB}{147, 161, 161}
+\definecolor{base0}   {RGB}{131, 148, 150}
+\definecolor{base1}   {RGB}{147, 161, 161}
 
 % Accent colours
-\definecolor{yellow}{RGB}{181, 137, 0}
-\definecolor{orange}{RGB}{203, 75, 22}
-\definecolor{red}{RGB}{220, 50, 47}
-\definecolor{magenta}{RGB}{211, 54, 130}
-\definecolor{violet}{RGB}{108, 113, 196}
-\definecolor{blue}{RGB}{38, 139, 210}
-\definecolor{cyan}{RGB}{42, 161, 152}
-\definecolor{green}{RGB}{133, 153, 0}
+\definecolor{yellow}  {RGB}{181, 137,   0}
+\definecolor{orange}  {RGB}{203,  75,  22}
+\definecolor{red}     {RGB}{220,  50,  47}
+\definecolor{magenta} {RGB}{211,  54, 130}
+\definecolor{violet}  {RGB}{108, 113, 196}
+\definecolor{blue}    {RGB}{38,  139, 210}
+\definecolor{cyan}    {RGB}{42,  161, 152}
+\definecolor{green}   {RGB}{133, 153,   0}
 
 %%%%%%%%%
 % Fonts %
 %%%%%%%%%
 
 % Heading font
-\newfontfamily{\jetbrainsmono} {JetBrainsMono}[
-  Path = fonts/,
-  Extension = .ttf,
+\newfontfamily{\jetbrainsmono}{JetBrainsMono}[
+  Path        = fonts/,
+  Extension   = .ttf,
   UprightFont = *-Medium,
-  BoldFont = *-Bold
+  BoldFont    = *-Bold
 ]
 
 % Body font
 \setmainfont{SFProText}[
-  Path = fonts/,
-  Extension = .otf,
+  Path        = fonts/,
+  Extension   = .otf,
   UprightFont = *-Regular,
-  ItalicFont = *-RegularItalic,
-  BoldFont = *-Semibold
+  ItalicFont  = *-RegularItalic,
+  BoldFont    = *-Semibold
 ]
 
 % Icon fonts
 \newfontfamily{\fabrands}{FontAwesome}[
-  Path = fonts/,
-  Extension = .otf,
+  Path        = fonts/,
+  Extension   = .otf,
   UprightFont = *-Brands
 ]
 \newfontfamily{\iconmonstr}{iconmonstr}[
-  Path = fonts/,
-  Extension = .ttf,
+  Path        = fonts/,
+  Extension   = .ttf,
   UprightFont = *-Iconic-Font
 ]
 
@@ -87,28 +87,28 @@
 % Glyphs from https://iconmonstr.com
 %    and also https://fontawesome.com
 
-\newcommand{\iconEmail}{{\iconmonstr^^^^e05f}}
-\newcommand{\iconPhone}{{\iconmonstr^^^^e06d}}
-\newcommand{\iconRocket}{{\iconmonstr^^^^e078}}
-\newcommand{\iconGraduationHat}{{\iconmonstr^^^^e0cc}}
-\newcommand{\iconCalendar}{{\iconmonstr^^^^e01f}}
-\newcommand{\iconNetwork}{{\iconmonstr^^^^e0e8}}
-\newcommand{\iconHome}{{\iconmonstr^^^^e05e}}
-\newcommand{\iconLocation}{{\iconmonstr^^^^e068}}
-\newcommand{\iconInstitute}{{\iconmonstr^^^^e0ec}}
-\newcommand{\iconSkills}{{\iconmonstr^^^^e116}}
-\newcommand{\iconBriefcase}{{\iconmonstr^^^^e01e}}
-\newcommand{\iconLockOpen}{{\iconmonstr^^^^e062}}
-\newcommand{\iconServer}{{\iconmonstr^^^^e0fa}}
-\newcommand{\iconCubes}{{\iconmonstr^^^^e0f4}}
-\newcommand{\iconNotes}{{\iconmonstr^^^^e0a3}}
-\newcommand{\iconLightbulb}{{\iconmonstr^^^^e116}}
-\newcommand{\iconOpenSource}{{\iconmonstr^^^^e07d}}
+\newcommand{\iconEmail}           {{\iconmonstr^^^^e05f}}
+\newcommand{\iconPhone}           {{\iconmonstr^^^^e06d}}
+\newcommand{\iconRocket}          {{\iconmonstr^^^^e078}}
+\newcommand{\iconGraduationHat}   {{\iconmonstr^^^^e0cc}}
+\newcommand{\iconCalendar}        {{\iconmonstr^^^^e01f}}
+\newcommand{\iconNetwork}         {{\iconmonstr^^^^e0e8}}
+\newcommand{\iconHome}            {{\iconmonstr^^^^e05e}}
+\newcommand{\iconLocation}        {{\iconmonstr^^^^e068}}
+\newcommand{\iconInstitute}       {{\iconmonstr^^^^e0ec}}
+\newcommand{\iconSkills}          {{\iconmonstr^^^^e116}}
+\newcommand{\iconBriefcase}       {{\iconmonstr^^^^e01e}}
+\newcommand{\iconLockOpen}        {{\iconmonstr^^^^e062}}
+\newcommand{\iconServer}          {{\iconmonstr^^^^e0fa}}
+\newcommand{\iconCubes}           {{\iconmonstr^^^^e0f4}}
+\newcommand{\iconNotes}           {{\iconmonstr^^^^e0a3}}
+\newcommand{\iconLightbulb}       {{\iconmonstr^^^^e116}}
+\newcommand{\iconOpenSource}      {{\iconmonstr^^^^e07d}}
 
-\newcommand{\iconGitHub}{{\fabrands^^^^f09b}}
-\newcommand{\iconLinkedIn}{{\fabrands^^^^f08c}}
-\newcommand{\iconGoogle}{{\fabrands^^^^f1a0}}
-\newcommand{\iconCreativeCommons}{{\fabrands^^^^f25e}}
+\newcommand{\iconGitHub}          {{  \fabrands^^^^f09b}}
+\newcommand{\iconLinkedIn}        {{  \fabrands^^^^f08c}}
+\newcommand{\iconGoogle}          {{  \fabrands^^^^f1a0}}
+\newcommand{\iconCreativeCommons} {{  \fabrands^^^^f25e}}
 
 %%%%%%%%%%
 % Titles %
