@@ -9,8 +9,12 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{tabularx}
+\RequirePackage{tikz}
 \RequirePackage{titlesec}
 \RequirePackage{xcolor}
+
+\usetikzlibrary{fadings}
+\tikzset{fading text/.style = {}}
 
 %%%%%%%%%%%
 % Lengths %
@@ -57,7 +61,8 @@
   Path        = fonts/,
   Extension   = .ttf,
   UprightFont = *-Medium,
-  BoldFont    = *-Bold
+  BoldFont    = *-Bold,
+  FontFace    = {eb}{n}{*-ExtraBold}
 ]
 
 % Body font
@@ -80,6 +85,9 @@
   Extension   = .ttf,
   UprightFont = *-Iconic-Font
 ]
+
+\DeclareRobustCommand\ebseries{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
 
 %%%%%%%%%
 % Icons %
@@ -140,7 +148,7 @@
 % 3 Icon
 % 4 Color
 \newcommand{\colouredsection}[4]{%
-\section[#1]{\jetbrainsmono\textcolor{#4}{#2\hfill#3}}%
+\section[#1]{\jetbrainsmono\textcolor{#4}{\textbf{#2} \hfill #3}}%
 }
 
 % Colored subsection
@@ -151,7 +159,7 @@
 \subsection[#1]{\textcolor{#3}{\jetbrainsmono#2}}%
 }
 
-% Resume heirarchy 
+% Resume heirarchy
 
 % Section in the resume
 % 1 Label
@@ -233,8 +241,27 @@
 
 % About
 
-\newcommand{\name}[1]{% Person's name
-\noindent{\Huge\jetbrainsmono\textcolor{red}{\textbf{#1}}}%
+% Gradient text with hyperlink
+% 1 Gradient configuration
+% 2 Hyperlink URL
+% 3 Text
+\newcommand\fadingtext[3][]{%
+  \begin{tikzfadingfrompicture}[name = fading letter]%
+    \node[text = transparent!0, inner xsep = 0pt, outer xsep = 0pt]{#3};%
+  \end{tikzfadingfrompicture}%
+  \begin{tikzpicture}[baseline = (textnode.base)]%
+    \node[inner sep = 0pt, outer sep = 0pt](textnode){\href{#2}{\XeTeXLinkBox{\phantom{#3}}}};%
+    \shade[path fading = fading letter, fading text, #1, fit fading = false]%
+    (textnode.south west) rectangle (textnode.north east);%
+  \end{tikzpicture}%
+}
+
+\newcommand{\name}[2]{% Person's name
+\noindent{%
+  \Huge\jetbrainsmono\texteb{%
+    \fadingtext[left color = red, right color = magenta]{#1}{#2}%
+  }%
+}%
 \vspace{0.4cm}%
 }
 
