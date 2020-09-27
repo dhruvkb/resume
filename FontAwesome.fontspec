@@ -1,0 +1,6 @@
+\defaultfontfeatures[FontAwesome]{
+  Path        = fonts/,
+  Extension   = .otf,
+  UprightFont = *-Brands,
+  BoldFont    = *-Brands
+}

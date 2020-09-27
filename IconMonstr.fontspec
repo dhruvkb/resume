@@ -1,0 +1,6 @@
+\defaultfontfeatures[IconMonstr]{
+  Path        = fonts/,
+  Extension   = .ttf,
+  UprightFont = *-Iconic-Font,
+  BoldFont    = *-Iconic-Font
+}

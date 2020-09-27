@@ -1,0 +1,7 @@
+\defaultfontfeatures[JetBrainsMono]{
+  Path        = fonts/,
+  Extension   = .ttf,
+  UprightFont = *-Medium,
+  BoldFont    = *-Bold,
+  FontFace    = {eb}{n}{*-ExtraBold}
+}

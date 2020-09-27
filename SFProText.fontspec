@@ -1,0 +1,7 @@
+\defaultfontfeatures[SFProText]{
+  Path        = fonts/,
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-RegularItalic,
+  BoldFont    = *-Semibold
+}
