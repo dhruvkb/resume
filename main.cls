@@ -9,7 +9,6 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{hyperref}
-\RequirePackage{setspace}
 \RequirePackage{tabularx}
 \RequirePackage{tikz}
 \RequirePackage{titlesec}
