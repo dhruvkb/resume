@@ -19,33 +19,30 @@ files that I use to generate them.
 
 ### Note
 
-A basic LaTeX installation probably won't contain the following 
-packages. Use `tlmgr` to install them manually.
-
-- `titlesec`
-- `hyphenat`
-- `enumitem`
-- `xstring`
+A basic LaTeX installation probably won't contain the all the packages required
+to compile this document. Use `tlmgr` to install them manually. A comprehensive
+list can be found in the [`texlive_packages`](texlive/texlive_packages) file.
 
 If you want to use `latexmk` to setup a watch and build process, you will
 probably need to install it using `tlmgr` too.
 
-The command to build the PDF of the résumé is as follows.
+The command to build the PDF of the cover letter and résumé is as follows.
 
 ```bash
-$ xelatex -output-directory=./docs -jobname=<jobname> main.tex
+$ xelatex -output-directory=./dist -jobname=<jobname> main.tex
 ```
 
+Flags `-interaction=nonstopmode` and `-halt-on-error` are added in CI/CD
+environments to prevent TeX from entering interactive mode when encountering
+errors.
+
 The job name is the name of the output PDF.
-| Job name           | Job portfolio      | Cover letter | Résumé |
-|--------------------|--------------------|--------------|--------|
-| `developer`        | Software developer | ✅ Yes       | ✅ Yes |
-| `developer_cover`  | Software developer | ✅ Yes       | ❌ No  |
-| `developer_resume` | Software developer | ❌ No        | ✅ Yes |
-| `writer`           | Technical writer   | ✅ Yes       | ✅ Yes |
-| `writer_cover`     | Technical writer   | ✅ Yes       | ❌ No  |
-| `writer_resume`    | Technical writer   | ❌ No        | ✅ Yes |
- 
+| Job name | Output       |
+|----------|--------------|
+| `cover`  | Cover letter |
+| `resume` | Résumé       |
+| `both`   | Both         |
+
 ### Related repos
 
 - [Portfolio](https://github.com/dhruvkb/portfolio/)

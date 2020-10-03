@@ -1,7 +1,7 @@
 #!/bin/bash
 
-xelatex -jobname=cover  main.tex
-xelatex -jobname=resume main.tex
+xelatex -interaction=nonstopmode -halt-on-error -jobname=cover  main.tex
+xelatex -interaction=nonstopmode -halt-on-error -jobname=resume main.tex
 
 if [[ -d "dist" ]]; then
     rm -rf dist/
