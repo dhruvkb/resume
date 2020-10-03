@@ -3,67 +3,37 @@
 
 \documentclass[9pt, a4paper]{main}
 
-\usepackage[margin = 0.75cm, tmargin = 1.00cm]{geometry}
+\usepackage[margin=\margin, tmargin=\margin]{geometry}
 \usepackage[none]{hyphenat}
 
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{multicol}
-\usepackage{xcolor}
 \usepackage{xstring}
-
-\hypersetup{%
-  colorlinks      = false,%     Remove font colour.
-  linkbordercolor = black,%     Make underlines black.
-  pdfborderstyle  = {/S/U/W 1}% Style is underline of width 1pt.
-}
-
-% Change job portfolio type.
-% Include the word 'writer' in the job name to print a documentation-oriented résumé.
-% Include the word 'developer' in the job name to print a development-oriented résumé.
-\IfSubStr*{\jobname}{writer}
-{\def\docoriented{1}}
-{\def\docoriented{0}}
 
 % Change whether a cover-letter is to be printed.
 % Include the word 'cover' in the job name to print the cover-letter.
 \IfSubStr*{\jobname}{cover}
-{\def\coverletter{1}}
-{\def\coverletter{0}}
+  {\def\coverletter{1}}
+  {\def\coverletter{0}}
 
 % Change whether a résumé is to be printed.
 % Include the word 'resume' in the job name to print the résumé.
 \IfSubStr*{\jobname}{resume}
-{\def\resume{1}}
-{\def\resume{0}}
-
-\if\docoriented1
-  \colorlet{background}{base3}
-  \colorlet{primary}{base00}
-  \colorlet{secondary}{base1}
-\else
-  \colorlet{background}{base03}
-  \colorlet{primary}{base0}
-  \colorlet{secondary}{base01}
-\fi
-
-\pagecolor{background}
-\color{primary}
+  {\def\resume{1}}
+  {\def\resume{0}}
 
 \begin{document}
 \if\coverletter1
-  \input{cover.tex}
+  \input{parts/cover.tex}
 \fi
 
 \if\resume1
-  \input{resume.tex}
+  \input{parts/resume.tex}
 \fi
 
 % Neither means both.
-\if\resume0
-  \if\coverletter0
-    \input{cover.tex}
-    \input{resume.tex}
-  \fi
-\fi
+\if\resume0\if\coverletter0
+  \input{parts/cover.tex}
+  \input{parts/resume.tex}
+\fi\fi
 \end{document}

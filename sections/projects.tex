@@ -1,39 +1,132 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resumesection{Personal projects}{Personal projects}{\iconCubes}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resumesection{Open source projects}{\iconCubes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\worksubsection%
-{Personal website}% Label
-{\href{https://dhruvkb.github.io/}{Personal website}}% Title
-{Portfolio}% Category
-{September 2019 -- Present}% Time period
-{Sass; Vue.js; Serverless $f$}% Tech stack
+%------------%
+% Vocabulary %
+%------------%
 
-\sectiondescription{
-  My portfolio is my small personal slice of the Internet.
+\projectsubsection
+  {Vocabulary}
+  {\timeperiod{May 2019}}
+  {https://opensource.creativecommons.org/vocabulary/}
+
+\begin{sectiondescription}
+  Vocabulary is cohesive design system \& Vue component library to unify the
+  web-facing \href{https://creativecommons.org/}{Creative~Commons}.
+\end{sectiondescription}
+
+\projectsubsubsection
+  {Design systvem}
+  {JavaScript (Sass; Vue; Storybook)}
+
+\begin{sectiondescription}
+  \begin{itemize}[nosep, leftmargin = *]
+    \item Planned the tech-stack \& higher-order repository structure.
+    \item Developed Sass styles and corresponding Vue components.
+    \item Integrated the documentation with an interactive Storybook.
+    \item Set up automated CI/CD pipelines for \href{https://opensource.creativecommons.org/vocabulary/}{docs} and \href{https://www.npmjs.com/package/@creativecommons/vocabulary}{builds}.
+    \item Continue to triage issues \& review PRs as a maintainer.
+  \end{itemize}
+\end{sectiondescription}
+
+%----------%
+% Omniport %
+%----------%
+
+\projectsubsection
+  {Omniport}
+  {\timeperiod{Mar 2018}}
+  {https://omniport.readthedocs.io/}
+
+\begin{sectiondescription}
+  Omniport is an end-to-end platform and app ecosystem for institutes to deploy
+  their web portal, by and for the students.
+\end{sectiondescription}
+
+\projectsubsubsection
+  {\href{https://github.com/IMGIITRoorkee/omniport-docker/}{Infrastructure}}
+  {Docker; Bash}
+
+\begin{sectiondescription}
+  \begin{itemize}[nosep, leftmargin = *]
+    \item Replaced old monolithic architecture with microservices.
+    \item Containerised core and scaffolding services with Docker.
+    \item Planned the infrastructure to be elastic and cloud native.
+    \item Automated scaling, redundancy and reproducibility.
+    \item Bash scripted image and container creation and tear-down.
+    \item Deployed proofs-of-concept in dev and prod environments.
+  \end{itemize}
+\end{sectiondescription}
+
+\projectsubsubsection
+  {\href{https://github.com/IMGIITRoorkee/omniport-backend/}{Backend}}
+  {Python (Django; DRF)}
+
+\begin{sectiondescription}
+  \begin{itemize}[nosep, leftmargin = *]
+    \item Planned it to be unopinionated to suit any institute's needs.
+    \item Developed Omniport to be generic but customisable.
+    \item Developed extension capability with plug-and-play apps.
+    \item Developed latest features such as HTTP/2 and WebSockets.
+    \item Added OAuth2 provider functionality for 3rd-party auth.
+    \item Launched as a mobile responsive progressive web app.
+    \item Composed the Django backend, all core apps and services.
+    \item Integrated with the React frontend and deployed on Docker.
+  \end{itemize}
+\end{sectiondescription}
+
+\projectsubsubsection
+  {\href{https://github.com/IMGIITRoorkee/omniport-docs/}{Documentation}}
+  {reStructuredText (Sphinx)}
+
+\begin{sectiondescription}
+  \begin{itemize}[nosep, leftmargin = *]
+    \item Penned the philosophy and ideals of the project.
+    \item Documented the architecture, frontend and backend.
+    \item Wrote helpful tutorials, how-to guides and FAQ.
+    \item Wrote in-depth reference material for functions and utils.
+    \item Deployed an always up-to-date version on ReadTheDocs.
+    \item Open-sourced and licensed docs under the GNU FDL.
+    \item Documented the entire codebase using PyDoc and JSDoc.
+  \end{itemize}
+\end{sectiondescription}
+
+%-----------%
+% Portfolio %
+%-----------%
+
+\projectsubsection
+  {Portfolio}
+  {\timeperiod{Mar 2018}}
+  {https://dhruvkb.github.io/}
+
+\begin{sectiondescription}
+  My portfolio is my small personal slice of the Internet. The entire suite has
+  automated CI/CD pipelines for deployment. The readable codebase is fully
+  documented \& open-source.
+\end{sectiondescription}
+
+\projectsubsubsection
+  {\href{https://github.com/dhruvkb/portfolio/}{Personal website}}
+  {JavaScript (Sass; Vue)}
+
+\begin{sectiondescription}
   \begin{itemize}[nosep, leftmargin = *]
     \item Revamped online portfolio to use the modern JAMStack.
-    \item Integrated a highly functional 'terminal emulator'-emulator.
-    \item Utilised the Solarized theme with both light and dark modes.
-    \item Set up serverless APIs and continuous deployment.
+    \item Integrated a highly functional `terminal emulator'-emulator.
+    \item Utilised the Solarized theme with both light \& dark modes.
+    \item Hosted a \href{https://dhruvkb.github.io/#/blog}{blog} with GitHub APIs \& serverless functions.
   \end{itemize}
-}
+\end{sectiondescription}
 
-\worksubsection%
-{Placement \& Internship portal}% Label
-{Placement \& Internship portal}% Title
-{Omniport application}% Category
-{August -- November, 2018}% Time period
-{Django; React}% Tech stack
+\projectsubsubsection
+  {\href{https://github.com/dhruvkb/resume/}{Résumé}}
+  {\prettylatex}
 
-\sectiondescription{
-  Placement \& Internship portal digitises the entire placement process,
-  including creating the official IIT Roorkee résumé, applying to companies
-  and knowing the results.
+\begin{sectiondescription}
   \begin{itemize}[nosep, leftmargin = *]
-    \item Added features to the app like test and interview calendar.
-    \item Added the ability to submit a cover letter with application.
-    \item Mentored the developers of the revamped Omniport version.
-    \item Mentored the developers of the Android companion app.
+    \item Crafted résumé with highly modular \& functional \prettylatex{}.
+    \item Fine-tuned the typesetting for the document to fit one page.
   \end{itemize}
-}
+\end{sectiondescription}

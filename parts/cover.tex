@@ -1,19 +1,20 @@
 % For another similar setup, see resume.tex
-\begin{multicols}{2}[]
+\formatcoversections
+\begin{minipage}{\dimexpr0.5\linewidth-0.5\columnsep\relax}
+  \invisiblepart{Cover letter}
   \input{sections/about.tex}
-  \columnbreak
-  \\
-\end{multicols}
+\end{minipage}
 
 \setlength{\parskip}{\baselineskip} % Leave a line between paragraphs
-\vspace{-0.5cm}
+
 Dear Hiring Manager,
 
 I am \textbf{Dhruv Bhanushali}, and this is my application for a full-time role
 as a \textbf{software engineer}. Let me go over the reasons why I believe I am a
 perfect fit for the role, and why the role is a perfect fit for me.
 
-\textcolor{green}{Why me?}
+\coversection{Why me?}
+
 \begin{itemize}[nosep, parsep = 1mm, leftmargin = *]
   \item \textbf{I am tenacious.} I started web development at IIT Roorkee during
   my bachelors' as a hobby. Four years of practice later, I was the Chief
@@ -42,20 +43,21 @@ perfect fit for the role, and why the role is a perfect fit for me.
 
   \item \textbf{I am a fast learner.} I learned Sphinx to write the
   \href{https://github.com/IMGIITRoorkee/omniport-docs/}{best documentation} for
-  Omniport, {\fontfamily{lmr}\selectfont\LaTeX} to build
-  \href{https://github.com/dhruvkb/resume/}{my resume} and this cover letter,
-  and finally Stylus, Sass and Vue.js for Vocabulary. Then mastered the last
-  three to power my \href{https://dhruvkb.github.io/}{personal website}.
+  Omniport, \prettylatex{} to build
+  \href{https://github.com/dhruvkb/resume/}{my résumé} and this cover letter,
+  and finally Sass and Vue for Vocabulary. Then mastered the last
+  two to power my \href{https://dhruvkb.github.io/}{personal website}.
 
   \item \textbf{I pride myself on code quality.} I make it a point to write
   test-driven, self-documenting code. Though I probably am the only person who
-  would ever see the \href{https://github.com/dhruvkb/portfolio/}{source code}
-  of my portfolio or the
-  \href{https://github.com/dhruvkb/resume/}{\fontfamily{lmr}\selectfont\LaTeX}
-  behind my resume, both are completely documented.
+  would ever see the 
+  \href{https://github.com/dhruvkb/portfolio/}{source code}
+  of my portfolio or the \prettylatex behind
+  \href{https://github.com/dhruvkb/resume/}{my résumé}
+  and cover letter, both are completely documented.
 
   \item \textbf{I am an ardent advocate of open source.} I designed Omniport's
-  core to be decoupled from the institute specifics so that the project could
+  score to be decoupled from the institute specifics so that the project could
   benefit other institutions. As an alumnus, I still review PRs made to Omniport
   and help new contributors get started.
 \end{itemize}
@@ -73,7 +75,7 @@ Looking forward to hearing from you,
 
 Regards,\\
 Dhruv Bhanushali
-\setlength{\parskip}{0cm} % Leave no space between paragraphs
+\setlength{\parskip}{0mm} % Leave no space between paragraphs
 
 \vfill
 \textcolor{secondary}{( ˇ ▽ ˇ )/}
