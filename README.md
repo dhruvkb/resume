@@ -20,11 +20,24 @@ files that I use to generate them.
 ### Note
 
 A basic LaTeX installation probably won't contain the all the packages required
-to compile this document. Use `tlmgr` to install them manually. A comprehensive
-list can be found in the [`texlive_packages`](texlive/texlive_packages) file.
+to compile this document. Use `tlmgr` to install them manually. If you want to
+use `latexmk` to setup a watch and build process, you will probably need to
+install it using `tlmgr` too.
 
-If you want to use `latexmk` to setup a watch and build process, you will
-probably need to install it using `tlmgr` too.
+- latexmk
+- xetex
+- enumitem
+- extsizes
+- fontspec
+- geometry
+- hyperref
+- hyphenat
+- multicol
+- pgf
+- tabularx
+- titlesec
+- xstring
+- xcolor
 
 The command to build the PDF of the cover letter and résumé is as follows.
 
