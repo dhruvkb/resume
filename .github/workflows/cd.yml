@@ -1,0 +1,62 @@
+name: CD
+
+on:
+  push:
+    branches:
+    - master
+
+env:
+  CI: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Checkout destionation repository
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        path: resume
+        ref: 'gh-pages'
+
+    - name: Build the resume
+      uses: xu-cheng/latex-action@v2
+      with:
+        compiler: xelatex
+        args: -interaction=nonstopmode -halt-on-error -jobname=resume
+        root_file: main.tex
+
+    - name: Build the cover letter
+      uses: xu-cheng/latex-action@v2
+      with:
+        compiler: xelatex
+        args: -interaction=nonstopmode -halt-on-error -jobname=cover
+        root_file: main.tex
+
+    - name: Transfer content to destination repo
+      run: |
+        cp public/index.html resume/
+        cp resume.pdf resume/
+        cp cover.pdf resume/
+
+    - name: Set up Git client
+      working-directory: resume
+      run: |
+        git config --local user.email "$GITHUB_ACTOR@$ACTOR_DOMAIN"
+        git config --local user.name "$ACTOR_NAME"
+      env:
+        ACTOR_DOMAIN: users.noreply.github.com
+        ACTOR_NAME: Dhruv Bhanushali
+
+    - name: Commit and push to remote
+      working-directory: resume
+      run: |
+        git checkout --orphan deploy
+        git add .
+        git commit -m "Deploy"
+        git push --force origin deploy:gh-pages
+
