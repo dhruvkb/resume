@@ -38,8 +38,8 @@
 \setlength{\margin}                 {8mm}
 \setlength{\sectionseptop}          {2mm}
 \setlength{\sectionsepbottom}       {1mm}
-\setlength{\subsectionseptop}       {2mm}
-\setlength{\subsubsectionseptop}    {2mm plus \smallskipamount}% Glue to ensure both columns line up
+\setlength{\subsectionseptop}       {3mm plus \smallskipamount}
+\setlength{\subsubsectionseptop}    {2mm}% Glue to ensure both columns line up
 \setlength{\descriptionseptop}      {1mm}
 
 %%%%%%%%%%
