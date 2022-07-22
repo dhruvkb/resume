@@ -17,37 +17,31 @@ These here are my cover-letter and résumés and the
 <img src="readme_assets/latex.png" height="16">
 files that I use to generate them.
 
-### Note
+# Requirements
 
-A basic LaTeX installation probably won't contain the all the packages required
-to compile this document. Use `tlmgr` to install them manually. If you want to
-use `latexmk` to setup a watch and build process, you will probably need to
-install it using `tlmgr` too.
+- BasicTeX (provides many useful packages and `tlmgr` for adding more)
+- `latexmk` (can be installed using `tlmgr`)
+- the following LaTeX pacakges
 
-- latexmk
-- xetex
+## LaTeX packges
+
 - enumitem
-- extsizes
-- fontspec
-- geometry
-- hyperref
 - hyphenat
-- multicol
-- pgf
-- tabularx
 - titlesec
 - xstring
-- xcolor
 
-The command to build the PDF of the cover letter and résumé is as follows.
+To build the final PDF, run the `build` command.
 
 ```bash
-$ xelatex -output-directory=./dist -jobname=<jobname> main.tex
+$ just build <jobname>
 ```
 
-Flags `-interaction=nonstopmode` and `-halt-on-error` are added in CI/CD
-environments to prevent TeX from entering interactive mode when encountering
-errors.
+During development, run the `dev` command to watch the source code and
+automatically update the PDF when the code is changed.
+
+```bash
+$ just dev <jobname>
+```
 
 The job name is the name of the output PDF.
 | Job name | Output       |
@@ -55,9 +49,3 @@ The job name is the name of the output PDF.
 | `cover`  | Cover letter |
 | `resume` | Résumé       |
 | `both`   | Both         |
-
-### Related repos
-
-- [Portfolio](https://github.com/dhruvkb/portfolio/)
-- [Serverless APIs](https://github.com/dhruvkb/portfolio-api/)
-- [Blog posts](https://github.com/dhruvkb/portfolio-blog/)
