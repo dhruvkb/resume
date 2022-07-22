@@ -11,12 +11,14 @@
 *.sw?
 
 # Auxiliary files
+aux/
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 *.out
 *.synctex.gz
+*.xdv
 
 # Output files
 dist/
