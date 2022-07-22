@@ -3,10 +3,7 @@ name: CD
 on:
   push:
     branches:
-    - master
-
-env:
-  CI: true
+    - main
 
 jobs:
   deploy:
@@ -16,47 +13,29 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Checkout destionation repository
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        path: resume
-        ref: 'gh-pages'
-
-    - name: Build the resume
+    - name: Build the résumé
       uses: xu-cheng/latex-action@v2
       with:
-        compiler: xelatex
-        args: -interaction=nonstopmode -halt-on-error -jobname=resume
+        latexmk_use_xelatex: true
+        args: -jobname=resume
         root_file: main.tex
 
     - name: Build the cover letter
       uses: xu-cheng/latex-action@v2
       with:
-        compiler: xelatex
-        args: -interaction=nonstopmode -halt-on-error -jobname=cover
+        latexmk_use_xelatex: true
+        args: -jobname=cover
         root_file: main.tex
 
-    - name: Transfer content to destination repo
+    - name: Collect deployment files
       run: |
         cp public/index.html resume/
         cp resume.pdf resume/
         cp cover.pdf resume/
 
-    - name: Set up Git client
-      working-directory: resume
-      run: |
-        git config --local user.email "$GITHUB_ACTOR@$ACTOR_DOMAIN"
-        git config --local user.name "$ACTOR_NAME"
-      env:
-        ACTOR_DOMAIN: users.noreply.github.com
-        ACTOR_NAME: Dhruv Bhanushali
-
-    - name: Commit and push to remote
-      working-directory: resume
-      run: |
-        git checkout --orphan deploy
-        git add .
-        git commit -m "Deploy"
-        git push --force origin deploy:gh-pages
-
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./resume
+        force_orphan: true
