@@ -17,14 +17,14 @@ jobs:
       uses: xu-cheng/latex-action@v2
       with:
         latexmk_use_xelatex: true
-        args: -jobname=resume
+        args: -interaction=nonstopmode -halt-on-error -jobname=resume
         root_file: main.tex
 
     - name: Build the cover letter
       uses: xu-cheng/latex-action@v2
       with:
         latexmk_use_xelatex: true
-        args: -jobname=cover
+        args: -interaction=nonstopmode -halt-on-error -jobname=cover
         root_file: main.tex
 
     - name: Collect deployment files
