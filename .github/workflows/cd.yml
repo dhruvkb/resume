@@ -17,21 +17,22 @@ jobs:
       uses: xu-cheng/latex-action@v2
       with:
         latexmk_use_xelatex: true
-        args: -interaction=nonstopmode -halt-on-error -jobname=resume
+        args: -interaction=nonstopmode -halt-on-error -jobname=resume -output-directory=./dist -aux-directory=./aux -emulate-aux-dir
         root_file: main.tex
 
     - name: Build the cover letter
       uses: xu-cheng/latex-action@v2
       with:
         latexmk_use_xelatex: true
-        args: -interaction=nonstopmode -halt-on-error -jobname=cover
+        args: -interaction=nonstopmode -halt-on-error -jobname=cover -output-directory=./dist -aux-directory=./aux -emulate-aux-dir
         root_file: main.tex
 
     - name: Collect deployment files
       run: |
+        mkdir resume
         cp public/index.html resume/
-        cp resume.pdf resume/
-        cp cover.pdf resume/
+        cp dist/resume.pdf resume/
+        cp dist/cover.pdf resume/
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
